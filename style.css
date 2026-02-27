@@ -1,3 +1,9 @@
 h1 {
   text-align: center;
 }
+
+.p1 {
+  color: red;
+  text-align: center;
+  font-size: 20px;
+}
