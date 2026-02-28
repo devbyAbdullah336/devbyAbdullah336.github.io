@@ -1,6 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
-  text-align: center;
-  font-size: 80px;
+  color: #ff3c3c;
+  font-size: 60px;
+  margin-top: 60px;
 }
 
 .p1 {
@@ -10,5 +16,8 @@ h1 {
 }
 
 body {
-  background: linear-gradient(to bottom, #1a0000, #660000);
+  background: linear-gradient(to bottom, #0f0000, #400000);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
