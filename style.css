@@ -11,10 +11,11 @@ h1 {
 }
 
 .p1 {
+  font-family: 'Montserrat', sans-serif;
   color: red;
-  margin-top: 85px;
+  margin-top: 70px;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 body {
