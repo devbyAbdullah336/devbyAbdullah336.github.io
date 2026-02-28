@@ -1,27 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
+    margin: 0;
+    background-color: #0a0a0a;
+    color: white;
 }
 
+/* Main layout */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+}
+
+/* Center title */
+.title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Title styling */
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #ff3c3c;
-  font-size: 60px;
-  margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    letter-spacing: 3px;
 }
 
 .p1 {
-  font-family: 'Montserrat', sans-serif;
-  color: red;
-  margin-top: 40px;
-  text-align: center;
-  font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
 }
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #0f0000, #400000);
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
+/* Side menus */
+.right-menu,
+.left-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Buttons */
+.menu-btn {
+    padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    background: black;
+    color: white;
+    border: 2px solid #555;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+.menu-btn:hover {
+    transform: scale(1.05);
+    border-color: white;
 }
