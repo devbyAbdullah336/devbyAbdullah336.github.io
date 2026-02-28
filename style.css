@@ -16,6 +16,7 @@ h1 {
 }
 
 body {
+  min-height: 100vh;
   background: linear-gradient(to bottom, #0f0000, #400000);
   color: white;
   font-family: Arial, sans-serif;
