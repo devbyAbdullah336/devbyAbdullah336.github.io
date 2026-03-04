@@ -30,7 +30,8 @@ h1 {
 .menu-container {
     display: flex;
     justify-content: space-between; /* spreads left, center, right */
-    align-items: center;            /* vertical alignment */
+    align-items: center;  
+    margin-left: 60px; 
 }
 
 .left-menu,
