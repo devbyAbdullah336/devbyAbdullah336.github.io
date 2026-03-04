@@ -29,7 +29,6 @@ h1 {
 
 .menu-container {
     display: flex;
-    justify-content: space-between; /* spreads left, center, right */
     align-items: center;  
     margin-left: 200px; 
 }
