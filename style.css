@@ -31,7 +31,7 @@ h1 {
     display: flex;
     justify-content: space-between; /* spreads left, center, right */
     align-items: center;  
-    margin-left: 120px; 
+    margin-left: 200px; 
 }
 
 .left-menu,
@@ -39,3 +39,10 @@ h1 {
     display: flex;
     gap: 15px; /* spacing between buttons */
 }
+
+.menu-btn {
+    background: #A12108;
+    color: white;
+    height: 100px;
+    width: 200px;
+    border-radius: 50%;
