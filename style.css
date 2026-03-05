@@ -41,6 +41,7 @@ h1 {
 
 .menu-btn {
     background: #A12108;
+    cursor: pointer;
     color: white;
     height: 50px;
     width: 100px;
