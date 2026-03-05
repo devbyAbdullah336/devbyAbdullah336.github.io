@@ -29,27 +29,26 @@ h1 {
 
 .menu-container {
     display: flex;
-    align-items: center;  
-    margin-left: 200px; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
 }
 
 .left-menu,
 .right-menu {
     display: flex;
-    gap: 15px; /* spacing between buttons */
+    gap: 15px;
 }
 
 .button {
     background: #A12108;
     cursor: pointer;
     color: white;
-    height: 50px;
-    width: 100px;
-    border-radius: 0px;
+    padding: 12px 20px;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
-.Credits-btn:hover {
-  background-color: #E32D0E;
-  color: white;
+.button:hover {
+    background-color: #E32D0E;
 }
