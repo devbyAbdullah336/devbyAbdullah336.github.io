@@ -39,7 +39,7 @@ h1 {
     gap: 15px; /* spacing between buttons */
 }
 
-.menu-btn {
+.button {
     background: #A12108;
     cursor: pointer;
     color: white;
