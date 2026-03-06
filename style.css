@@ -27,15 +27,28 @@ h1 {
     font-size: 35px;
 }
 
-.menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 200px;
+.title-container {
+    text-align: center;
 }
 
-.left-menu,
+.menu-container {
+    position: relative;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.left-menu {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
 .right-menu {
+    position: absolute;
+    right: 40px;
+    top: 40px;
     display: flex;
     gap: 15px;
 }
