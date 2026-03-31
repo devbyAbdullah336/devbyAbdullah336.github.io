@@ -91,3 +91,78 @@ h1 {
 
     transform: translateY(-2px);
 }
+
+/* ===== JOURNEY CONTAINER ===== */
+
+.journey-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ===== DAY CARD ===== */
+
+.day-card {
+    background: #1a0000;
+    border: 2px solid #ff3c3c;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+/* ===== TITLE BUTTON ===== */
+
+.day-title {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 24px;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    background: #A12108;
+
+    list-style: none;
+}
+
+.day-title:hover {
+    background-color: #E32D0E;
+
+    box-shadow: 0 0 10px #ff3c3c;
+}
+
+/* Remove arrow */
+
+.day-title::-webkit-details-marker {
+    display: none;
+}
+
+/* ===== CONTENT ===== */
+
+.day-content {
+    padding: 20px;
+}
+
+/* ===== IMAGES ===== */
+
+.day-content img {
+    width: 100%;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+}
+
+/* ===== TEXT ===== */
+
+.day-content p {
+    font-size: 18px;
+
+    line-height: 1.6;
+}
