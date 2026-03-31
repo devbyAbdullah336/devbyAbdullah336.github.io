@@ -166,3 +166,34 @@ h1 {
 
     line-height: 1.6;
 }
+
+/* ===== BACK BUTTON ===== */
+
+.back-button {
+    position: absolute;
+
+    left: 40px;
+    top: 40px;
+
+    background: #A12108;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #E32D0E;
+
+    box-shadow: 0 0 10px #ff3c3c;
+
+    transform: translateY(-2px);
+}
