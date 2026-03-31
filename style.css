@@ -6,41 +6,54 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to bottom, #0f0000, #400000);
+
+    background: linear-gradient(
+        to bottom,
+        #0f0000,
+        #400000
+    );
+
     color: white;
     font-family: Arial, sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+
+.menu-container {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+}
+
+/* ===== TITLE ===== */
+
+.title-container {
     text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     color: #ff3c3c;
     font-size: 60px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .p1 {
     font-family: 'Montserrat', sans-serif;
     color: red;
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 20px;
     font-size: 35px;
 }
 
-.title-container {
-    text-align: center;
-}
-
-.menu-container {
-    position: relative;
-    width: 100%;
-    padding: 20px 40px;
-}
+/* ===== MENUS ===== */
 
 .left-menu {
     position: absolute;
     left: 40px;
     top: 40px;
+
     display: flex;
     gap: 15px;
 }
@@ -49,19 +62,32 @@ h1 {
     position: absolute;
     right: 40px;
     top: 40px;
+
     display: flex;
     gap: 15px;
 }
 
+/* ===== BUTTONS ===== */
+
 .button {
     background: #A12108;
     cursor: pointer;
+
     color: white;
     padding: 12px 20px;
+
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: 0.2s ease;
 }
 
 .button:hover {
     background-color: #E32D0E;
+
+    box-shadow: 0 0 10px #ff3c3c;
+
+    transform: translateY(-2px);
 }
