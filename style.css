@@ -102,7 +102,7 @@ h1 {
 
 /* ===== DAY CARD ===== */
 
-.day-card {
+.week-card {
     background: #1a0000;
     border: 2px solid #ff3c3c;
 
@@ -117,7 +117,7 @@ h1 {
 
 /* ===== TITLE BUTTON ===== */
 
-.day-title {
+.week-title {
     font-family: 'Montserrat', sans-serif;
 
     font-size: 24px;
@@ -131,7 +131,7 @@ h1 {
     list-style: none;
 }
 
-.day-title:hover {
+.week-title:hover {
     background-color: #E32D0E;
 
     box-shadow: 0 0 10px #ff3c3c;
@@ -139,19 +139,19 @@ h1 {
 
 /* Remove arrow */
 
-.day-title::-webkit-details-marker {
+.week-title::-webkit-details-marker {
     display: none;
 }
 
 /* ===== CONTENT ===== */
 
-.day-content {
+.week-content {
     padding: 20px;
 }
 
 /* ===== IMAGES ===== */
 
-.day-content img {
+.week-content img {
     width: 100%;
 
     border-radius: 6px;
@@ -161,7 +161,7 @@ h1 {
 
 /* ===== TEXT ===== */
 
-.day-content p {
+.week-content p {
     font-size: 18px;
 
     line-height: 1.6;
