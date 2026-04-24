@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +22,7 @@ body {
 }
 
 /* =========================
-   HERO (HOME PAGE)
+   HERO / HOME PAGE
 ========================= */
 
 .hero {
@@ -41,9 +45,10 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
+    transform: translate(-50%, -50%);
     text-align: center;
+
     z-index: 2;
 }
 
@@ -60,18 +65,18 @@ h1 {
 }
 
 /* =========================
-   CORNER UI (MK STYLE)
+   CORNER UI (FIXED LAYOUT)
 ========================= */
 
 .left-menu,
 .right-menu {
-    position: absolute;
+    position: fixed;   /* FIX: locks to screen */
     top: 30px;
 
     display: flex;
     gap: 15px;
 
-    z-index: 3;
+    z-index: 10;
 }
 
 .left-menu {
@@ -83,7 +88,7 @@ h1 {
 }
 
 /* =========================
-   BUTTONS (SHARP MK STYLE)
+   BUTTONS (MK STYLE)
 ========================= */
 
 .button {
@@ -144,10 +149,11 @@ h1 {
     transform: scale(1.01);
 }
 
-/* TITLE BAR */
+/* TITLE */
 .week-title {
     padding: 20px;
     background: #7a0c0c;
+
     cursor: pointer;
 }
 
@@ -155,13 +161,13 @@ h1 {
     background: #ff2a2a;
 }
 
-/* remove default arrow */
+/* hide arrow safely */
 .week-title::-webkit-details-marker {
     display: none;
 }
 
 /* =========================
-   FIXED ANIMATION (REAL WORKING)
+   FIXED ANIMATION (WORKING)
 ========================= */
 
 .week-content {
