@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* ALWAYS prevent horizontal shift */
+/* prevent layout shift */
 html {
     overflow-y: scroll;
 }
@@ -22,8 +22,9 @@ body {
 ========================= */
 
 .hero {
-    height: 100vh;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 
     background: url("images/hero.jpg") center/cover no-repeat;
 }
@@ -32,36 +33,34 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.95)
-    );
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.95));
 }
 
-.title {
+/* CENTER TITLE */
+.title-container {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 90px;
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 70px;
     color: #ff3c3c;
-    text-shadow: 0 0 25px red;
+    text-shadow: 0 0 20px red;
 }
 
-.subtitle {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+.p1 {
     font-size: 22px;
+    margin-top: 10px;
     color: #ff6a6a;
 }
 
 /* =========================
-   CORNER UI BUTTONS (MK STYLE)
+   CORNER UI (MK STYLE)
 ========================= */
 
 .left-menu,
@@ -71,6 +70,8 @@ body {
 
     display: flex;
     gap: 15px;
+
+    z-index: 3;
 }
 
 .left-menu {
@@ -96,8 +97,6 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
 
-    border-radius: 0;
-
     background: linear-gradient(to bottom, #b30000, #5a0000);
     border: 1px solid #ff2a2a;
 
@@ -112,39 +111,12 @@ body {
 
 .button:hover {
     background: linear-gradient(to bottom, #ff1a1a, #7a0000);
-
     box-shadow: 0 0 25px red;
-
     transform: translateY(-2px);
 }
 
-.button:active {
-    transform: translateY(1px);
-}
-
 /* =========================
-   TITLES
-========================= */
-
-.title-container {
-    text-align: center;
-    margin-top: 100px;
-}
-
-h1 {
-    font-size: 60px;
-    color: #ff3c3c;
-    text-shadow: 0 0 15px red;
-}
-
-.p1 {
-    font-size: 22px;
-    margin-top: 10px;
-    color: #ff6a6a;
-}
-
-/* =========================
-   JOURNEY LAYOUT
+   JOURNEY CONTAINER
 ========================= */
 
 .journey-container {
@@ -164,7 +136,7 @@ h1 {
     margin-bottom: 20px;
     overflow: hidden;
 
-    transition: 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .week-card[open] {
@@ -176,39 +148,34 @@ h1 {
 .week-title {
     padding: 20px;
     background: #7a0c0c;
-
     cursor: pointer;
-    list-style: none;
-
-    transition: 0.3s ease;
 }
 
 .week-title:hover {
     background: #ff2a2a;
 }
 
-/* REMOVE DEFAULT ARROW */
+/* remove default arrow */
 .week-title::-webkit-details-marker {
     display: none;
 }
 
 /* =========================
-   ANIMATED CONTENT (FIXED)
+   FIXED ANIMATION (REAL WORKING)
 ========================= */
 
 .week-content {
-    padding: 20px;
-
+    max-height: 0;
     opacity: 0;
-    transform: translateY(-10px);
+    overflow: hidden;
 
-    display: none;
+    transform: translateY(-8px);
 
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: max-height 0.5s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .week-card[open] .week-content {
-    display: block;
+    max-height: 2000px;
     opacity: 1;
     transform: translateY(0);
 }
@@ -231,7 +198,7 @@ h1 {
     width: 100%;
     border-radius: 6px;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .media-row img:hover,
@@ -248,17 +215,4 @@ h1 {
     font-size: 18px;
     line-height: 1.6;
     color: #ddd;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px red;
-    }
-    to {
-        text-shadow: 0 0 30px #ff3c3c;
-    }
 }
