@@ -156,3 +156,31 @@ h1 {
     width: 100%;
     margin-bottom: 10px;
 }
+
+/* ===== ANIMATED DETAILS CARD ===== */
+
+.week-card {
+    overflow: hidden;
+}
+
+/* content starts hidden */
+.week-content {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: all 0.4s ease;
+}
+
+/* when open */
+.week-card[open] .week-content {
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* smooth title glow when open */
+.week-card[open] .week-title {
+    background: #ff2a2a;
+    box-shadow: 0 0 15px red;
+}
