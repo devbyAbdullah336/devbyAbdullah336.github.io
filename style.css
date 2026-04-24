@@ -1,35 +1,20 @@
-/* =========================
-   RESET
-========================= */
-
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* prevent layout shift */
-html {
-    overflow-y: scroll;
-}
-
 body {
-    min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
-
-    background: radial-gradient(circle at top, #1a0000, #000000 80%);
+    background: black;
     color: white;
 }
 
-/* =========================
-   HERO / HOME PAGE
-========================= */
-
+/* ===== HERO ===== */
 .hero {
-    position: relative;
     height: 100vh;
-    overflow: hidden;
-
+    position: relative;
     background: url("images/hero.jpg") center/cover no-repeat;
 }
 
@@ -41,56 +26,56 @@ body {
 }
 
 /* CENTER TITLE */
-.title-container {
+.title {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
-
     transform: translate(-50%, -50%);
-    text-align: center;
 
-    z-index: 2;
-}
-
-h1 {
-    font-size: 70px;
+    font-size: 90px;
     color: #ff3c3c;
-    text-shadow: 0 0 20px red;
+    text-shadow: 0 0 25px red;
 }
 
-.p1 {
+.subtitle {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     font-size: 22px;
-    margin-top: 10px;
     color: #ff6a6a;
 }
 
-/* =========================
-   CORNER UI (FIXED LAYOUT)
-========================= */
+/* ===== CORNER UI (MK STYLE) ===== */
+.corner-ui {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
 
-.left-menu,
-.right-menu {
-    position: fixed;   /* FIX: locks to screen */
+/* TOP LEFT */
+.top-left {
+    position: absolute;
     top: 30px;
+    left: 30px;
 
     display: flex;
     gap: 15px;
-
-    z-index: 10;
 }
 
-.left-menu {
-    left: 30px;
-}
-
-.right-menu {
+/* TOP RIGHT */
+.top-right {
+    position: absolute;
+    top: 30px;
     right: 30px;
+
+    display: flex;
+    gap: 15px;
 }
 
-/* =========================
-   BUTTONS (MK STYLE)
-========================= */
-
+/* ===== MK BUTTONS ===== */
 .button {
     display: inline-block;
 
@@ -102,6 +87,8 @@ h1 {
     letter-spacing: 1px;
     text-transform: uppercase;
 
+    border-radius: 0;
+
     background: linear-gradient(to bottom, #b30000, #5a0000);
     border: 1px solid #ff2a2a;
 
@@ -110,8 +97,7 @@ h1 {
         0 0 10px rgba(255,0,0,0.3);
 
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
 .button:hover {
@@ -120,105 +106,53 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* =========================
-   JOURNEY CONTAINER
-========================= */
+/* ===== BACK BUTTON ===== */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
 
+/* ===== TITLES ===== */
+.title-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 60px;
+    color: #ff3c3c;
+}
+
+.p1 {
+    color: #ff6a6a;
+}
+
+/* ===== JOURNEY ===== */
 .journey-container {
     max-width: 900px;
     margin: 60px auto;
-    padding: 20px;
 }
 
-/* =========================
-   WEEK CARDS
-========================= */
-
+/* CARDS */
 .week-card {
     background: #120000;
     border: 1px solid #ff3c3c;
-
     margin-bottom: 20px;
-    overflow: hidden;
-
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.week-card[open] {
-    box-shadow: 0 0 25px red;
-    transform: scale(1.01);
-}
-
-/* TITLE */
 .week-title {
     padding: 20px;
     background: #7a0c0c;
-
     cursor: pointer;
 }
 
-.week-title:hover {
-    background: #ff2a2a;
-}
-
-/* hide arrow safely */
-.week-title::-webkit-details-marker {
-    display: none;
-}
-
-/* =========================
-   FIXED ANIMATION (WORKING)
-========================= */
-
 .week-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-
-    transform: translateY(-8px);
-
-    transition: max-height 0.5s ease, opacity 0.3s ease, transform 0.3s ease;
+    padding: 20px;
 }
 
-.week-card[open] .week-content {
-    max-height: 2000px;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   MEDIA
-========================= */
-
-.media-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-.media-row img,
-.media-row video {
-    flex: 1;
-    min-width: 280px;
+.week-content img,
+.week-content video {
     width: 100%;
-    border-radius: 6px;
-
-    transition: 0.3s ease;
-}
-
-.media-row img:hover,
-.media-row video:hover {
-    box-shadow: 0 0 20px red;
-    transform: scale(1.02);
-}
-
-/* =========================
-   TEXT
-========================= */
-
-.week-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ddd;
+    margin-bottom: 10px;
 }
