@@ -1,217 +1,70 @@
-/* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-
-    background: radial-gradient(circle at top, #1a0000, #000000 80%);
-    color: white;
-}
-
-/* ===== HERO (FOR INDEX) ===== */
-
-.hero {
-    height: 100vh;
-    background: url("images/hero.jpg") center/cover no-repeat;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(10,0,0,0.95));
-}
-
-.hero-content {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.hero h1 {
-    font-size: 90px;
-    color: #ff3c3c;
-    text-shadow: 0 0 25px red;
-    animation: glow 2s infinite alternate;
-}
-
-.hero p {
-    font-size: 26px;
-    margin-top: 15px;
-}
-
-/* ===== TITLE ===== */
-
-.title-container {
-    text-align: center;
-    max-width: 900px;
-    margin: 100px auto 40px;
-}
-
-h1 {
-    font-size: 60px;
-    color: #ff3c3c;
-    text-shadow: 0 0 15px red;
-}
-
-.p1 {
-    color: #ff6a6a;
-    margin-top: 15px;
-    font-size: 22px;
-}
-
-/* ===== BUTTONS ===== */
-
 .button {
-    background: linear-gradient(135deg, #7a0c0c, #c11212);
-    border: 1px solid #ff3c3c;
+    display: inline-block;
 
-    padding: 12px 24px;
-    margin: 5px;
+    padding: 14px 26px;
 
     color: white;
     text-decoration: none;
 
-    border-radius: 6px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     letter-spacing: 1px;
+    text-transform: uppercase;
 
-    box-shadow: 0 0 10px rgba(255,0,0,0.4);
-    transition: 0.3s;
+    /* 🔥 SHARP EDGES (key change) */
+    border-radius: 0px;
+
+    /* MK-style red gradient */
+    background: linear-gradient(
+        to bottom,
+        #b30000,
+        #5a0000
+    );
+
+    border: 1px solid #ff2a2a;
+
+    /* inner + outer depth */
+    box-shadow:
+        inset 0 0 10px rgba(255,0,0,0.4),
+        0 0 10px rgba(255,0,0,0.3);
+
+    transition: 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+/* 🔥 TOP HIGHLIGHT EDGE (MK-style bevel) */
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: rgba(255,255,255,0.3);
+}
+
+/* HOVER = aggressive glow */
 .button:hover {
-    background: #ff2a2a;
+    background: linear-gradient(
+        to bottom,
+        #ff1a1a,
+        #7a0000
+    );
 
     box-shadow:
-        0 0 15px #ff3c3c,
-        0 0 30px red;
+        inset 0 0 15px rgba(255,255,255,0.1),
+        0 0 25px red,
+        0 0 40px rgba(255,0,0,0.6);
 
-    transform: scale(1.05);
+    transform: translateY(-2px);
 }
 
-/* ===== BACK BUTTON ===== */
-
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-}
-
-/* ===== JOURNEY ===== */
-
-.journey-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-/* ===== WEEK CARD ===== */
-
-.week-card {
-    background: linear-gradient(to bottom, #1a0000, #050000);
-    border: 1px solid #ff3c3c;
-
-    margin-bottom: 25px;
-    border-radius: 8px;
-    overflow: hidden;
-
-    box-shadow: 0 0 20px rgba(255,0,0,0.15);
-    transition: 0.3s;
-}
-
-.week-card:hover {
-    box-shadow: 0 0 30px rgba(255,0,0,0.3);
-}
-
-/* ===== TITLE BAR ===== */
-
-.week-title {
-    font-size: 24px;
-    padding: 20px;
-
-    cursor: pointer;
-    list-style: none;
-
-    background: linear-gradient(to right, #7a0c0c, #c11212);
-    letter-spacing: 1px;
-}
-
-.week-title:hover {
-    background: #ff2a2a;
-}
-
-/* Remove default arrow */
-.week-title::-webkit-details-marker {
-    display: none;
-}
-
-/* ===== CONTENT ===== */
-
-.week-content {
-    padding: 20px;
-    animation: fadeIn 0.4s ease;
-}
-
-/* ===== MEDIA ===== */
-
-.media-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-.media-row img,
-.media-row video {
-    flex: 1;
-    min-width: 280px;
-    width: 100%;
-    border-radius: 6px;
-
-    transition: 0.3s;
-}
-
-/* Glow on hover */
-.media-row img:hover,
-.media-row video:hover {
-    box-shadow: 0 0 20px red;
-    transform: scale(1.02);
-}
-
-/* ===== TEXT ===== */
-
-.week-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ddd;
-}
-
-/* ===== ANIMATIONS ===== */
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px red;
-    }
-    to {
-        text-shadow: 0 0 30px #ff3c3c;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* CLICK FEEL (important for MK vibe) */
+.button:active {
+    transform: translateY(1px);
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,0.5);
 }
