@@ -1,20 +1,30 @@
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ALWAYS prevent horizontal shift */
+html {
+    overflow-y: scroll;
+}
+
 body {
+    min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    background: black;
+
+    background: radial-gradient(circle at top, #1a0000, #000000 80%);
     color: white;
 }
 
-/* ===== HERO ===== */
+/* =========================
+   HERO (HOME PAGE)
+========================= */
+
 .hero {
     height: 100vh;
     position: relative;
+
     background: url("images/hero.jpg") center/cover no-repeat;
 }
 
@@ -22,10 +32,13 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.95));
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.95)
+    );
 }
 
-/* CENTER TITLE */
 .title {
     position: absolute;
     top: 45%;
@@ -47,35 +60,31 @@ body {
     color: #ff6a6a;
 }
 
-/* ===== CORNER UI (MK STYLE) ===== */
-.corner-ui {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
+/* =========================
+   CORNER UI BUTTONS (MK STYLE)
+========================= */
 
-/* TOP LEFT */
-.top-left {
+.left-menu,
+.right-menu {
     position: absolute;
     top: 30px;
+
+    display: flex;
+    gap: 15px;
+}
+
+.left-menu {
     left: 30px;
-
-    display: flex;
-    gap: 15px;
 }
 
-/* TOP RIGHT */
-.top-right {
-    position: absolute;
-    top: 30px;
+.right-menu {
     right: 30px;
-
-    display: flex;
-    gap: 15px;
 }
 
-/* ===== MK BUTTONS ===== */
+/* =========================
+   BUTTONS (SHARP MK STYLE)
+========================= */
+
 .button {
     display: inline-block;
 
@@ -97,23 +106,26 @@ body {
         0 0 10px rgba(255,0,0,0.3);
 
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-    transition: 0.2s;
+
+    transition: 0.2s ease;
 }
 
 .button:hover {
     background: linear-gradient(to bottom, #ff1a1a, #7a0000);
+
     box-shadow: 0 0 25px red;
+
     transform: translateY(-2px);
 }
 
-/* ===== BACK BUTTON ===== */
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
+.button:active {
+    transform: translateY(1px);
 }
 
-/* ===== TITLES ===== */
+/* =========================
+   TITLES
+========================= */
+
 .title-container {
     text-align: center;
     margin-top: 100px;
@@ -122,65 +134,131 @@ body {
 h1 {
     font-size: 60px;
     color: #ff3c3c;
+    text-shadow: 0 0 15px red;
 }
 
 .p1 {
+    font-size: 22px;
+    margin-top: 10px;
     color: #ff6a6a;
 }
 
-/* ===== JOURNEY ===== */
+/* =========================
+   JOURNEY LAYOUT
+========================= */
+
 .journey-container {
     max-width: 900px;
     margin: 60px auto;
+    padding: 20px;
 }
 
-/* CARDS */
+/* =========================
+   WEEK CARDS
+========================= */
+
 .week-card {
     background: #120000;
     border: 1px solid #ff3c3c;
+
     margin-bottom: 20px;
+    overflow: hidden;
+
+    transition: 0.3s ease;
 }
 
+.week-card[open] {
+    box-shadow: 0 0 25px red;
+    transform: scale(1.01);
+}
+
+/* TITLE BAR */
 .week-title {
     padding: 20px;
     background: #7a0c0c;
+
     cursor: pointer;
+    list-style: none;
+
+    transition: 0.3s ease;
 }
+
+.week-title:hover {
+    background: #ff2a2a;
+}
+
+/* REMOVE DEFAULT ARROW */
+.week-title::-webkit-details-marker {
+    display: none;
+}
+
+/* =========================
+   ANIMATED CONTENT (FIXED)
+========================= */
 
 .week-content {
     padding: 20px;
-}
 
-.week-content img,
-.week-content video {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-/* ===== ANIMATED DETAILS CARD ===== */
-
-.week-card {
-    overflow: hidden;
-}
-
-/* content starts hidden */
-.week-content {
-    max-height: 0;
     opacity: 0;
     transform: translateY(-10px);
 
-    transition: all 0.4s ease;
+    display: none;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* when open */
 .week-card[open] .week-content {
-    max-height: 1000px;
+    display: block;
     opacity: 1;
     transform: translateY(0);
 }
 
-/* smooth title glow when open */
-.week-card[open] .week-title {
-    background: #ff2a2a;
-    box-shadow: 0 0 15px red;
+/* =========================
+   MEDIA
+========================= */
+
+.media-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.media-row img,
+.media-row video {
+    flex: 1;
+    min-width: 280px;
+    width: 100%;
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.media-row img:hover,
+.media-row video:hover {
+    box-shadow: 0 0 20px red;
+    transform: scale(1.02);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.week-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px red;
+    }
+    to {
+        text-shadow: 0 0 30px #ff3c3c;
+    }
 }
