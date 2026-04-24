@@ -8,6 +8,30 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!--  ANIMATION ONLY  -->
+<style>
+.week-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
+
+.week-card[open] .week-content {
+    max-height: 1500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.week-card[open] .week-title {
+    background: #ff2a2a;
+    box-shadow: 0 0 15px red;
+}
+</style>
+
 </head>
 
 <body>
@@ -19,7 +43,7 @@
 <div class="title-container">
     <h1>Game Development Journey</h1>
     <p class="p1">
-        Click a week to expand and explore progress.
+        Click a week to expand and see progress.
     </p>
 </div>
 
@@ -28,92 +52,122 @@
 
 <!-- WEEK 1 -->
 <details class="week-card">
-<summary class="week-title">Week 1 — Player Movement</summary>
+<summary class="week-title">
+Week 1 — Player Movement
+</summary>
 
 <div class="week-content">
 
 <div class="media-row">
-    <img src="images/week1.png" alt="Week 1 Screenshots">
 
-    <video controls>
-        <source src="videos/week1.mp4" type="video/mp4">
-    </video>
-</div>
+<img src="images/week1.png" alt="Week 1 Screenshots">
+
+<video controls>
+    <source src="videos/week1.mp4" type="video/mp4">
+</video>
 
 <p>
-In Week 1, I developed the core player movement system, including jumping and directional movement.
-I also created the foundation for an enemy AI system, although it is not yet functional.
+In week 1 i worked on my characters movement system.
+Your basic jumping, going left, right and forward, backward.
+I also made the the script for the Enemy AI but it doesnt do anything yet.
 </p>
+
+</div>
 
 </div>
 </details>
 
 <!-- WEEK 2 -->
 <details class="week-card">
-<summary class="week-title">Week 2 — Free-Flow Combat System</summary>
+<summary class="week-title">
+Week 2 — Free-Flow Combat System start
+</summary>
 
 <div class="week-content">
 
 <div class="media-row">
-    <img src="images/week2.png" alt="Week 2 Screenshots">
 
-    <video controls>
-        <source src="videos/week2.mp4" type="video/mp4">
-    </video>
-</div>
+<img src="images/week2.png" alt="Week 2 Screenshots">
+
+<video controls>
+    <source src="videos/week2.mp4" type="video/mp4">
+</video>
 
 <p>
-In Week 2, I began implementing a free-flow combat system inspired by the
-Batman Arkham series. The player can move dynamically between enemies based
-on directional input using the mouse and keyboard.
+In Week 2 I started working on the free flow combat system. 
+Its similar to the Batman Arkhem Knight Game Series,
+i got the character to move between enemies based on the direction you are facing with mouse and/or keyboard.
 </p>
+
+</div>
 
 </div>
 </details>
 
 <!-- WEEK 3/4 -->
 <details class="week-card">
-<summary class="week-title">Week 3/4 — Camera & Combat Animations</summary>
+<summary class="week-title">
+Week 3/4 — Adding Dynamic Camera and Attack Animations
+</summary>
 
 <div class="week-content">
 
 <div class="media-row">
-    <video controls>
-        <source src="videos/week3.mp4" type="video/mp4">
-    </video>
-</div>
+
+<video controls>
+    <source src="videos/week3.mp4" type="video/mp4">
+</video>
 
 <p>
-In Week 3, I introduced a dynamic camera system that adapts based on the number
-of enemies in the area. In Week 4, I expanded combat by adding attack and hit
-animations with directional reactions based on where enemies are struck.
+In Week 3, I added a dynamic camera that changes based on how many enemies there are in the area and started to add attack animations.
+In Week 4, I added attack and hit animations, the hit reactions will play based on where the enemy is hit, so if u attack from behind, the enemy will get push forward
+and vice versa for all directions.
 </p>
+
+</div>
 
 </div>
 </details>
 
 <!-- WEEK 5/6 -->
 <details class="week-card">
-<summary class="week-title">Week 5/6 — Motion Warping Combat</summary>
+<summary class="week-title">
+Week 5/6 — Attacking Enemies and adding motion warping
+</summary>
 
 <div class="week-content">
 
 <div class="media-row">
-    <video controls>
-        <source src="videos/week5.mp4" type="video/mp4">
-    </video>
-</div>
+
+<video controls>
+    <source src="videos/week5.mp4" type="video/mp4">
+</video>
 
 <p>
-In Weeks 5 and 6, I implemented motion warping using Unreal Engine 5.
-This allows animations to dynamically adjust in real time so actions like
-attacks connect accurately with targets, even when positioning isn’t perfect.
+I added attack and hit animations using motion warping, Motion Warping in Unreal Engine 5 adjusts animations in real time 
+so a character lines up correctly with a target, like an enemy or ledge, making actions such as attacks or vaults land accurately even
+if the positioning isn’t perfect.
 </p>
+
+</div>
 
 </div>
 </details>
 
 </div>
+
+<!--  ANIMATION SCRIPT -->
+<script>
+document.querySelectorAll(".week-card").forEach(card => {
+    card.addEventListener("toggle", () => {
+        if (card.open) {
+            card.classList.add("open");
+        } else {
+            card.classList.remove("open");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
