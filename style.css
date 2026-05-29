@@ -16,10 +16,9 @@ body {
     min-height: 100vh;
     position: relative;
     background: url("images/hero.jpg") center/cover no-repeat;
-    transition: padding-bottom 0.4s ease-in-out; /* Smooth transition when opening */
+    transition: padding-bottom 0.4s ease-in-out;
 }
 
-/* Crucial Fix: Adds 600px of empty space at the bottom of the website so you can comfortably scroll past the doc */
 .hero.expanded-scroll {
     padding-bottom: 600px; 
 }
@@ -68,7 +67,7 @@ body {
     z-index: 5;
 }
 
-#documentFrameWrapper {
+#documentFrameWrapper, #citationsFrameWrapper {
     margin-top: 20px;
     background: #1a1a1a;
     border: 2px solid #ff3c3c;
@@ -76,7 +75,7 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-#documentFrameWrapper iframe {
+#documentFrameWrapper iframe, #citationsFrameWrapper iframe {
     width: 100%;
     height: 100%;
     background: #ffffff;
@@ -142,6 +141,55 @@ body {
     background: linear-gradient(to bottom, #ff1a1a, #7a0000);
     box-shadow: 0 0 25px red;
     transform: translateY(-2px);
+}
+
+/* ===== MK STYLE DROPDOWN SYSTEM ===== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown menu container styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #120000;
+    min-width: 180px;
+    border: 1px solid #ff3c3c;
+    box-shadow: 0px 8px 16px rgba(255, 0, 0, 0.2);
+    z-index: 30;
+    margin-top: 5px;
+}
+
+/* Styling links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px dashed rgba(255, 60, 60, 0.2);
+    transition: background 0.2s;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effects inside dropdown matching Mortal Kombat theme */
+.dropdown-content a:hover {
+    background-color: #7a0c0c;
+    color: #ffffff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ===== BACK BUTTON ===== */
