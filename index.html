@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>SoulsArena</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,10 +19,8 @@
     <div class="doc-embed-container">
         <button id="toggleDocBtn" class="button" onclick="toggleDocument()">View Document</button>
         
-        <div id="documentFrameWrapper" style="display: none; margin-top: 20px; width: 80vw; max-width: 900px; height: 600px; border: 2px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.5); background: #fff;">
+        <div id="documentFrameWrapper" style="display: none; width: 100%; height: 600px;">
             <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://yourusername.github.io/your-repository-name/document.docx" 
-                    width="100%" 
-                    height="100%" 
                     frameborder="0">
             </iframe>
         </div>
@@ -39,6 +37,7 @@
             <a href="website.html" class="button">Web Journey</a>
         </div>
     </div>
+
 </div>
 
 <script>
@@ -49,7 +48,7 @@ function toggleDocument() {
     if (wrapper.style.display === "none") {
         wrapper.style.display = "block";
         btn.innerText = "Hide Document";
-        // Smoothly scroll down to see the document if the page is long
+        // Smoothly scrolls down to bring the document into view once it opens
         wrapper.scrollIntoView({ behavior: 'smooth' });
     } else {
         wrapper.style.display = "none";
