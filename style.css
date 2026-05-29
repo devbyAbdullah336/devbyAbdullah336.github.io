@@ -13,9 +13,10 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height so it expands down when the doc is visible */
     position: relative;
     background: url("images/hero.jpg") center/cover no-repeat;
+    padding-bottom: 50px; /* Gives breathable room at the bottom of the page when open */
 }
 
 .overlay {
@@ -45,6 +46,41 @@ body {
 
     font-size: 22px;
     color: #ff6a6a;
+}
+
+/* ===== DOCUMENT EMBED SYSTEM ===== */
+.doc-embed-container {
+    position: absolute;
+    top: 68%; /* Placed cleanly right below the 55% subtitle track */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    max-width: 1000px;
+    z-index: 5; /* Keeps it layered cleanly over the dark overlay background */
+}
+
+#toggleDocBtn {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+#documentFrameWrapper {
+    margin-top: 25px;
+    background: #1a1a1a; /* Clean dark state before the iframe fills with white doc space */
+    border: 2px solid #ff3c3c;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+#documentFrameWrapper iframe {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
 }
 
 /* ===== CORNER UI (MK STYLE) ===== */
