@@ -16,12 +16,12 @@ body {
     min-height: 100vh;
     position: relative;
     background: url("images/hero.jpg") center/cover no-repeat;
-    transition: padding-bottom 0.4s ease-in-out; /* Makes the expansion feel smooth */
+    transition: padding-bottom 0.4s ease-in-out; /* Smooth transition when opening */
 }
 
-/* Dynamic class triggered by JavaScript to allow deep scrolling down past the document */
+/* Crucial Fix: Adds 600px of empty space at the bottom of the website so you can comfortably scroll past the doc */
 .hero.expanded-scroll {
-    padding-bottom: 250px; /* Adjust this number higher if you want even more empty scrolling room at the bottom */
+    padding-bottom: 600px; 
 }
 
 .overlay {
