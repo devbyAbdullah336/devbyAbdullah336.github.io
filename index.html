@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>SoulsArena</title>
-
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>SoulsArena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,9 +16,19 @@
     <h1 class="title">SoulsArena</h1>
     <p class="subtitle">From Idea to Reality</p>
 
-    <!-- CORNER UI -->
-    <div class="corner-ui">
+    <div class="doc-embed-container">
+        <button id="toggleDocBtn" class="button" onclick="toggleDocument()">View Document</button>
+        
+        <div id="documentFrameWrapper" style="display: none; margin-top: 20px; width: 80vw; max-width: 900px; height: 600px; border: 2px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.5); background: #fff;">
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://yourusername.github.io/your-repository-name/document.docx" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0">
+            </iframe>
+        </div>
+    </div>
 
+    <div class="corner-ui">
         <div class="top-left">
             <a href="credits.html" class="button">Credits</a>
             <a href="Research.html" class="button">Research</a>
@@ -29,10 +38,25 @@
             <a href="game.html" class="button">Game Journey</a>
             <a href="website.html" class="button">Web Journey</a>
         </div>
-
     </div>
-
 </div>
+
+<script>
+function toggleDocument() {
+    var wrapper = document.getElementById("documentFrameWrapper");
+    var btn = document.getElementById("toggleDocBtn");
+    
+    if (wrapper.style.display === "none") {
+        wrapper.style.display = "block";
+        btn.innerText = "Hide Document";
+        // Smoothly scroll down to see the document if the page is long
+        wrapper.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        wrapper.style.display = "none";
+        btn.innerText = "View Document";
+    }
+}
+</script>
 
 </body>
 </html>
