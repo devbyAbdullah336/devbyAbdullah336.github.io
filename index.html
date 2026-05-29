@@ -47,14 +47,14 @@ function toggleDocument() {
     if (wrapper.style.display === "none") {
         wrapper.style.display = "block";
         btn.innerText = "Hide Research";
-        hero.classList.add("expanded-scroll"); // Automatically injects deeper scroll padding
+        hero.classList.add("expanded-scroll"); // Adds the deep website scroll space
         
         // Smoothly scrolls down so the document is perfectly framed on screen
         wrapper.scrollIntoView({ behavior: 'smooth' });
     } else {
         wrapper.style.display = "none";
         btn.innerText = "Research";
-        hero.classList.remove("expanded-scroll"); // Reverts page height back to normal splash page
+        hero.classList.remove("expanded-scroll"); // Reverts page height back to normal
     }
 }
 </script>
