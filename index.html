@@ -16,38 +16,26 @@
     <h1 class="title">SoulsArena</h1>
     <p class="subtitle">From Idea to Reality</p>
 
-    <!-- CENTERED EMBEDDED VIEWS CONTAINER -->
+    <!-- CENTERED EMBEDDED RESEARCH VIEW -->
     <div class="doc-embed-container">
-        
-        <!-- RESEARCH DOCUMENT FRAME -->
         <div id="documentFrameWrapper" style="display: none; width: 100%; height: 600px;">
             <!-- REPLACE WITH YOUR LIVE RESEARCH DOC LINK -->
             <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/Capstone_Research.docx" 
                     frameborder="0">
             </iframe>
         </div>
-
-        <!-- CITATIONS FRAME (Embedded but hidden by default) -->
-        <div id="citationsFrameWrapper" style="display: none; width: 100%; height: 600px;">
-            <!-- REPLACE WITH YOUR LIVE CITATIONS DOC OR PDF LINK -->
-            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/Citations_Capstone.docx" 
-                    frameborder="0">
-            </iframe>
-        </div>
-
     </div>
 
     <!-- CORNER UI -->
     <div class="corner-ui">
         
-        <!-- TOP LEFT MAIN MENU -->
         <div class="top-left">
-            
-            <!-- DROPDOWN WRAPPER FOR CREDITS -->
+            <!-- DROPDOWN FOR CREDITS -->
             <div class="dropdown">
                 <a href="javascript:void(0);" class="button">Credits <span style="font-size: 11px; margin-left: 5px;">▼</span></a>
                 <div class="dropdown-content">
-                    <a href="javascript:void(0);" id="citationsBtn" onclick="toggleCitations()">Citations</a>
+                    <!-- Links directly to your external citations page -->
+                    <a href="citations.html">Citations</a>
                     <!-- Change 'gallery.html' to whichever link or page has your images -->
                     <a href="gallery.html">View Images</a>
                 </div>
@@ -56,7 +44,6 @@
             <a href="javascript:void(0);" id="researchBtn" class="button" onclick="toggleDocument()">Research</a>
         </div>
 
-        <!-- TOP RIGHT MAIN MENU -->
         <div class="top-right">
             <a href="game.html" class="button">Game Journey</a>
             <a href="website.html" class="button">Web Journey</a>
@@ -65,17 +52,12 @@
 
 </div>
 
-<!-- JavaScript to manage toggling multiple document frames seamlessly -->
+<!-- JavaScript for Home Screen Document Toggling -->
 <script>
-// Toggle the main Research Document
 function toggleDocument() {
     var wrapper = document.getElementById("documentFrameWrapper");
     var btn = document.getElementById("researchBtn");
-    var citationsWrapper = document.getElementById("citationsFrameWrapper");
     var hero = document.getElementById("heroSection");
-    
-    // Close Citations if it's currently open
-    citationsWrapper.style.display = "none";
     
     if (wrapper.style.display === "none") {
         wrapper.style.display = "block";
@@ -85,27 +67,6 @@ function toggleDocument() {
     } else {
         wrapper.style.display = "none";
         btn.innerText = "Research";
-        hero.classList.remove("expanded-scroll");
-    }
-}
-
-// Toggle the Citations Document
-function toggleCitations() {
-    var citationsWrapper = document.getElementById("citationsFrameWrapper");
-    var researchWrapper = document.getElementById("documentFrameWrapper");
-    var researchBtn = document.getElementById("researchBtn");
-    var hero = document.getElementById("heroSection");
-    
-    // Close Research if it's currently open
-    researchWrapper.style.display = "none";
-    researchBtn.innerText = "Research";
-    
-    if (citationsWrapper.style.display === "none") {
-        citationsWrapper.style.display = "block";
-        hero.classList.add("expanded-scroll");
-        citationsWrapper.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        citationsWrapper.style.display = "none";
         hero.classList.remove("expanded-scroll");
     }
 }
