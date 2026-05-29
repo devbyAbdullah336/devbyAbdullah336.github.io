@@ -13,10 +13,15 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-    min-height: 100vh; /* Changed from height to min-height so it expands down when the doc is visible */
+    min-height: 100vh;
     position: relative;
     background: url("images/hero.jpg") center/cover no-repeat;
-    padding-bottom: 50px; /* Gives breathable room at the bottom of the page when open */
+    transition: padding-bottom 0.4s ease-in-out; /* Makes the expansion feel smooth */
+}
+
+/* Dynamic class triggered by JavaScript to allow deep scrolling down past the document */
+.hero.expanded-scroll {
+    padding-bottom: 250px; /* Adjust this number higher if you want even more empty scrolling room at the bottom */
 }
 
 .overlay {
@@ -51,7 +56,7 @@ body {
 /* ===== DOCUMENT EMBED SYSTEM ===== */
 .doc-embed-container {
     position: absolute;
-    top: 68%; /* Placed cleanly right below the 55% subtitle track */
+    top: 66%; 
     left: 50%;
     transform: translateX(-50%);
     
@@ -60,18 +65,12 @@ body {
     align-items: center;
     width: 90vw;
     max-width: 1000px;
-    z-index: 5; /* Keeps it layered cleanly over the dark overlay background */
-}
-
-#toggleDocBtn {
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    outline: none;
+    z-index: 5;
 }
 
 #documentFrameWrapper {
-    margin-top: 25px;
-    background: #1a1a1a; /* Clean dark state before the iframe fills with white doc space */
+    margin-top: 20px;
+    background: #1a1a1a;
     border: 2px solid #ff3c3c;
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
     transition: all 0.3s ease-in-out;
@@ -99,6 +98,7 @@ body {
 
     display: flex;
     gap: 15px;
+    z-index: 20;
 }
 
 /* TOP RIGHT */
@@ -109,6 +109,7 @@ body {
 
     display: flex;
     gap: 15px;
+    z-index: 20;
 }
 
 /* ===== MK BUTTONS ===== */
@@ -134,6 +135,7 @@ body {
 
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .button:hover {
