@@ -10,7 +10,7 @@
 
 <body>
 
-<div class="hero">
+<div class="hero" id="heroSection">
     <div class="overlay"></div>
 
     <h1 class="title">SoulsArena</h1>
@@ -18,14 +18,13 @@
 
     <div class="doc-embed-container">
         <div id="documentFrameWrapper" style="display: none; width: 100%; height: 600px;">
-            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/Capstone_Research.docx" 
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/your-repository-name/document.docx" 
                     frameborder="0">
             </iframe>
         </div>
     </div>
 
     <div class="corner-ui">
-
         <div class="top-left">
             <a href="credits.html" class="button">Credits</a>
             <a href="javascript:void(0);" id="researchBtn" class="button" onclick="toggleDocument()">Research</a>
@@ -35,7 +34,6 @@
             <a href="game.html" class="button">Game Journey</a>
             <a href="website.html" class="button">Web Journey</a>
         </div>
-
     </div>
 
 </div>
@@ -44,15 +42,19 @@
 function toggleDocument() {
     var wrapper = document.getElementById("documentFrameWrapper");
     var btn = document.getElementById("researchBtn");
+    var hero = document.getElementById("heroSection");
     
     if (wrapper.style.display === "none") {
         wrapper.style.display = "block";
         btn.innerText = "Hide Research";
+        hero.classList.add("expanded-scroll"); // Automatically injects deeper scroll padding
+        
         // Smoothly scrolls down so the document is perfectly framed on screen
         wrapper.scrollIntoView({ behavior: 'smooth' });
     } else {
         wrapper.style.display = "none";
         btn.innerText = "Research";
+        hero.classList.remove("expanded-scroll"); // Reverts page height back to normal splash page
     }
 }
 </script>
