@@ -17,25 +17,25 @@
     <p class="subtitle">From Idea to Reality</p>
 
     <div class="doc-embed-container">
-        <button id="toggleDocBtn" class="button" onclick="toggleDocument()">View Document</button>
-        
         <div id="documentFrameWrapper" style="display: none; width: 100%; height: 600px;">
-            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/Capstone_Research.docx" 
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/devbyAbdullah336.github.io/Capstone_Research.docx" 
                     frameborder="0">
             </iframe>
         </div>
     </div>
 
     <div class="corner-ui">
+
         <div class="top-left">
             <a href="credits.html" class="button">Credits</a>
-            <a href="Research.html" class="button">Research</a>
+            <a href="javascript:void(0);" id="researchBtn" class="button" onclick="toggleDocument()">Research</a>
         </div>
 
         <div class="top-right">
             <a href="game.html" class="button">Game Journey</a>
             <a href="website.html" class="button">Web Journey</a>
         </div>
+
     </div>
 
 </div>
@@ -43,16 +43,16 @@
 <script>
 function toggleDocument() {
     var wrapper = document.getElementById("documentFrameWrapper");
-    var btn = document.getElementById("toggleDocBtn");
+    var btn = document.getElementById("researchBtn");
     
     if (wrapper.style.display === "none") {
         wrapper.style.display = "block";
-        btn.innerText = "Hide Document";
-        // Smoothly scrolls down to bring the document into view once it opens
+        btn.innerText = "Hide Research";
+        // Smoothly scrolls down so the document is perfectly framed on screen
         wrapper.scrollIntoView({ behavior: 'smooth' });
     } else {
         wrapper.style.display = "none";
-        btn.innerText = "View Document";
+        btn.innerText = "Research";
     }
 }
 </script>
