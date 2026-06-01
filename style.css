@@ -15,8 +15,16 @@ body {
 .hero {
     min-height: 100vh;
     position: relative;
+    /* Keeps your fallback background image if inline style isn't loaded */
     background: url("images/hero.jpg") center/cover no-repeat;
     transition: padding-bottom 0.4s ease-in-out;
+    
+    /* UPDATED: Naturally stacks layout elements without breaking overlap */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px 20px; 
 }
 
 .hero.expanded-scroll {
@@ -25,40 +33,36 @@ body {
 
 .overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.95));
+    z-index: 1; /* Puts overlay below text and buttons */
 }
 
-/* CENTER TITLE */
+/* UPDATED: Replaced absolute positioning with natural margins for text layout */
 .title {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     font-size: 90px;
     color: #ff3c3c;
     text-shadow: 0 0 25px red;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 10px;
 }
 
 .subtitle {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     font-size: 22px;
     color: #ff6a6a;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 40px;
 }
 
 /* ===== DOCUMENT EMBED SYSTEM ===== */
 .doc-embed-container {
-    position: absolute;
-    top: 66%; 
-    left: 50%;
-    transform: translateX(-50%);
-    
+    /* UPDATED: Changed from absolute to relative alignment */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,6 +108,7 @@ body {
     width: 100%;
     top: 0;
     left: 0;
+    pointer-events: none; /* Prevents invisible full-width box blocking clicks */
 }
 
 /* TOP LEFT */
@@ -111,10 +116,10 @@ body {
     position: absolute;
     top: 30px;
     left: 30px;
-
     display: flex;
     gap: 15px;
     z-index: 20;
+    pointer-events: auto; /* Restores button clickability */
 }
 
 /* TOP RIGHT */
@@ -122,33 +127,27 @@ body {
     position: absolute;
     top: 30px;
     right: 30px;
-
     display: flex;
     gap: 15px;
     z-index: 20;
+    pointer-events: auto; /* Restores button clickability */
 }
 
 /* ===== MK BUTTONS ===== */
 .button {
     display: inline-block;
-
     padding: 14px 26px;
     color: white;
     text-decoration: none;
-
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-
     border-radius: 0;
-
     background: linear-gradient(to bottom, #b30000, #5a0000);
     border: 1px solid #ff2a2a;
-
     box-shadow:
         inset 0 0 10px rgba(255,0,0,0.4),
         0 0 10px rgba(255,0,0,0.3);
-
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
     transition: 0.2s;
     cursor: pointer;
@@ -177,8 +176,6 @@ body {
     border: 1px solid #ff3c3c;
     box-shadow: 0px 8px 16px rgba(255, 0, 0, 0.4);
     z-index: 30;
-    
-    /* FIXES HOVER GAP BUG */
     margin-top: 0px; 
     padding-top: 5px; 
 }
