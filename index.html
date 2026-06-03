@@ -3,149 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SoulsArena - Capstone Hub</title>
+    <title>SoulsArena</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* ===== CORE WORKSPACE LAYOUT ===== */
-        .main-hub {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        /* Central Hub Navigation Controller Card */
-        .hub-card {
-            background: rgba(18, 0, 0, 0.85);
-            border: 2px solid #ff3c3c;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-            width: 90vw;
-            max-width: 650px;
-            padding: 50px 40px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .hub-card h1 {
-            font-size: 46px;
-            color: #ff3c3c;
-            text-shadow: 0 0 20px red;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        .hub-card .subtitle {
-            font-size: 16px;
-            color: #b5b5b5;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-        }
-
-        /* Button Stack System */
-        .menu-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .navigation-button {
-            display: block;
-            background: rgba(40, 0, 0, 0.6);
-            border: 1px solid #ff3c3c;
-            padding: 18px 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .navigation-button:hover {
-            background: #ff3c3c;
-            color: #000000;
-            box-shadow: 0 0 20px #ff3c3c;
-            transform: scale(1.02);
-        }
-
-        .button-text {
-            position: relative;
-            z-index: 3;
-        }
-
-        /* Footer Credits Styling */
-        .hub-footer {
-            margin-top: 35px;
-            font-size: 12px;
-            color: #ff6a6a;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- FIXED HERO BACKDROP CONTAINER: Custom layout settings for image width specs -->
-    <div class="hero" id="heroSection" style="background: url('BG.png') no-repeat center center / cover; width: 100%; min-height: 100vh;">
-        <div class="overlay"></div>
+<div class="hero" id="heroSection" style="background-image: url('BG.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="overlay"></div>
 
-        <div class="main-hub">
-            <div class="hub-card">
-                
-                <h1>SoulsArena</h1>
-                <div class="subtitle">Capstone Development Ecosystem</div>
+    <h1 class="title">SoulsArena</h1>
+    <p class="subtitle">From Idea to Reality</p>
 
-                <!-- MAIN NAVIGATION MENU SYSTEM -->
-                <div class="menu-stack">
-                    
-                    <!-- Link to Developer Identity Profile -->
-                    <a href="profile.html" class="navigation-button">
-                        <span class="button-text">Developer Profile</span>
-                    </a>
-
-                    <!-- Link to Game Engine Build Progress -->
-                    <a href="game.html" class="navigation-button">
-                        <span class="button-text">Game Dev Journey</span>
-                    </a>
-
-                    <!-- Link to Web App System Records -->
-                    <a href="website.html" class="navigation-button">
-                        <span class="button-text">Web Dev Journey</span>
-                    </a>
-
-                    <!-- Link to Verification and Ms. Johal Details -->
-                    <a href="mentor.html" class="navigation-button">
-                        <span class="button-text">Mentor Guidance</span>
-                    </a>
-
-                    <!-- NEW LINK: Final Reflective System Assessment Summary -->
-                    <a href="reflection.html" class="navigation-button" style="border-style: double; border-width: 3px;">
-                        <span class="button-text">Final Reflection</span>
-                    </a>
-
-                </div>
-
-                <!-- System Signature Meta -->
-                <div class="hub-footer">
-                    Designed & Programmed by Abdullah
-                </div>
-
-            </div>
+    <div class="doc-embed-container">
+        <div id="documentFrameWrapper" style="display: none; width: 100%; height: 600px;">
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://devbyabdullah336.github.io/Capstone_Research.docx" 
+                    frameborder="0">
+            </iframe>
         </div>
     </div>
 
-</body>
+    <div class="corner-ui">
+        
+        <div class="top-left">
+            <div class="dropdown">
+                <a href="javascript:void(0);" class="button">Credits <span style="font-size: 11px; margin-left: 5px;">▼</span></a>
+                <div class="dropdown-content">
+                    <a href="citations.html">Citations</a>
+                    <a href="mentor.html">Mentor</a>
+                </div>
+            </div>
 
+            <a href="javascript:void(0);" id="researchBtn" class="button" onclick="toggleDocument()">Research</a>
+            
+            <a href="profile.html" class="button">Personal Profile</a>
+        </div>
+
+        <div class="top-right">
+            <a href="game.html" class="button">Game Journey</a>
+            <a href="website.html" class="button">Web Journey</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleDocument() {
+    var wrapper = document.getElementById("documentFrameWrapper");
+    var btn = document.getElementById("researchBtn");
+    var hero = document.getElementById("heroSection");
+    
+    if (wrapper.style.display === "none") {
+        wrapper.style.display = "block";
+        btn.innerText = "Hide Research";
+        hero.classList.add("expanded-scroll");
+        wrapper.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        wrapper.style.display = "none";
+        btn.innerText = "Research";
+        hero.classList.remove("expanded-scroll");
+    }
+}
+</script>
+
+</body>
 </html>
