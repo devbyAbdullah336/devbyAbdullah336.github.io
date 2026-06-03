@@ -22,7 +22,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         /* Character Profile Card Structure */
@@ -130,7 +130,7 @@
 
         <div class="capstone-container">
             
-            <!-- Viewport Section 1: UI Stats Display Card -->
+            <!-- SECTION 1: UI STATS DISPLAY CARD -->
             <div class="capstone-section">
                 <div class="profile-card">
                     <h2>My Info</h2>
@@ -157,7 +157,7 @@
                 </div>
             </div>
 
-            <!-- Viewport Section 2: Why Game Development Story & Goals -->
+            <!-- SECTION 2: WHY GAME DEVELOPMENT STORY -->
             <div class="capstone-section">
                 <div class="capstone-content">
                     <h2>Why Game Development?</h2>
@@ -173,23 +173,50 @@
                     <p>
                         At the end of the day, this capstone project is proof of my coding journey. It's about sitting down, breaking things, spending hours troubleshooting why a script isn't working, and finally getting to see your own ideas come to life on the screen.
                     </p>
+                </div>
+            </div>
 
-                    <!-- WHAT IS GAME DEV -->
-                    <h2 style="margin-top: 40px;">What is Game Development anyway?</h2>
+            <!-- SECTION 3: WHAT IS GAME DEVELOPMENT -->
+            <div class="capstone-section">
+                <div class="capstone-content">
+                    <h2>What is Game Development anyway?</h2>
+                    
                     <p>
-                        To me, game development isn't just about sitting down and writing lines of code. It’s basically where math, logic, art, and sound all crash together to make something interactive. You aren't just telling a computer to display static text or process information; you are creating an entire living environment with its own set of rules. Every time a character jumps, swings a weapon, or takes damage, there are dozens of calculations happening under the hood to make sure it looks right and feels satisfying to play.
+                        To me, game development isn't just about sitting down and writing lines of code. It’s basically where math, logic, art, and sound all crash together to make something interactive. You aren't just telling a computer to display static text or process information; you are creating an entire living environment with its own set of rules. 
                     </p>
-
-                    <!-- PROJECT GOALS -->
-                    <h2 style="margin-top: 40px;">My Goals for this Project</h2>
+                    
                     <p>
-                        When I started working on SoulsArena, my main goal was to move past basic tutorial code and actually build a working, round-based combat system completely by myself. I wanted to prove that I could handle complex tasks like coding scaling enemy AI that gets progressively tougher each round, setting up accurate hit registration, and designing a clean user interface that keeps track of player stats without breaking. I didn't need it to look like a multi-million dollar studio game—I just wanted it to be polished, responsive, and genuinely fun to test.
+                        Every time a character jumps, swings a weapon, or takes damage, there are dozens of calculations happening under the hood to make sure it looks right and feels satisfying to play.
                     </p>
+                </div>
+            </div>
 
-                    <!-- FUTURE GOALS -->
-                    <h2 style="margin-top: 40px;">Where I'm Heading Next</h2>
+            <!-- SECTION 4: PROJECT GOALS -->
+            <div class="capstone-section">
+                <div class="capstone-content">
+                    <h2>My Goals for this Project</h2>
+                    
                     <p>
-                        This capstone project is just the beginning for me. After completing Grade 11 and wrapping up this version of SoulsArena, I want to start diving deeper into complex game engines like Unity or Unreal Engine, and learn more about advanced programming concepts like spatial partitioning and object-oriented architectures. My ultimate goal is to keep building bigger, more detailed indie games, get a degree in Computer Science, and eventually break into the gaming industry as a software engineer.
+                        When I started working on SoulsArena, my main goal was to move past basic tutorial code and actually build a working, round-based combat system completely by myself. 
+                    </p>
+                    
+                    <p>
+                        I wanted to prove that I could handle complex tasks like coding scaling enemy AI that gets progressively tougher each round, setting up accurate hit registration, and designing a clean user interface that keeps track of player stats without breaking. I didn't need it to look like a multi-million dollar studio game—I just wanted it to be polished, responsive, and genuinely fun to test.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 5: FUTURE GOALS -->
+            <div class="capstone-section">
+                <div class="capstone-content">
+                    <h2>Where I'm Heading Next</h2>
+                    
+                    <p>
+                        This capstone project is just the beginning for me. After completing Grade 11 and wrapping up this version of SoulsArena, I want to start diving deeper into complex game engines like Unity or Unreal Engine, and learn more about advanced programming concepts like spatial partitioning and object-oriented architectures. 
+                    </p>
+                    
+                    <p>
+                        My ultimate goal is to keep building bigger, more detailed indie games, get a degree in Computer Science, and eventually break into the gaming industry as a software engineer.
                     </p>
                 </div>
             </div>
@@ -205,7 +232,6 @@
     <!-- LIGHTBOX LOGIC SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Automatically connects to any profile asset image elements if added later
             const targets = document.querySelectorAll('.capstone-content img, .profile-card img');
             
             targets.forEach(img => {
