@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Final Reflection | SoulsArena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .reflection-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 20px 60px 20px;
+            position: relative;
+        }
+
+        .reflection-header {
+            text-align: center;
+            z-index: 2;
+            margin-bottom: 40px;
+        }
+
+        .reflection-header h2 {
+            font-size: 42px;
+            color: #ff3c3c;
+            text-shadow: 0 0 20px red;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .reflection-header p {
+            font-size: 18px;
+            color: #ff6a6a;
+        }
+
+        .reflection-container {
+            background: rgba(18, 0, 0, 0.85);
+            border: 2px solid #ff3c3c;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 850px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .reflection-section h3 {
+            color: #ff3c3c;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed rgba(255, 60, 60, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .reflection-section p {
+            font-size: 16px;
+            color: #b5b5b5;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #ff6a6a;
+            font-weight: 700;
+        }
+
+        .takeaway-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .takeaway-list li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .takeaway-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #ff3c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back to Core Landing Workspace Menu -->
+    <a href="index.html" class="button back-button">◀ Back to Arena</a>
+
+    <div class="reflection-hero" style="background: url('BG.png') no-repeat center center / cover; width: 100%; min-height: 100vh;">
+        <div class="overlay"></div>
+
+        <div class="reflection-header">
+            <h2>Final Reflection</h2>
+            <p>Looking back at 13 weeks of development on SoulsArena</p>
+        </div>
+
+        <div class="reflection-container">
+            <div class="reflection-section">
+                <p>
+                    Looking back at Week 1 when I just had a basic character jumping around on a blank layout, finishing <span class="highlight">SoulsArena</span> has been an incredible experience. This capstone project was the biggest and most complicated programming challenge I’ve ever taken on, and it completely changed how I think about logic, problem-solving, and software development.
+                </p>
+
+                <h3>What I Learned About Programming</h3>
+                <p>
+                    The biggest technical lesson I learned is that making code work is only half the battle; building systems that don't break when you add *new* mechanics is where the real skill comes in. When I began linking complex nodes like motion warping, custom hitbox variables, and round logic, old functions would constantly break. 
+                </p>
+                <p>
+                    Spending hours tracking down blueprints taught me how to stop getting overwhelmed and start breaking massive technical bugs down into tiny, actionable components—like spending 30 minutes tracing a single node path until hit detection worked flawlessly.
+                </p>
+
+                <h3>Core Project Takeaways</h3>
+                <ul class="takeaway-list">
+                    <li><span class="highlight">Scope Control:</span> It is incredibly easy to get carried away wanting to add a million features at once. Through mentor feedback from Ms. Johal, I realized that focusing heavily on deep polish (like smooth hit reactions and solid combat mechanics) is infinitely better than building a massive, broken environment.</li>
+                    <li><span class="highlight">Advanced AI Architectures:</span> Coding enemy behavior trees so they don't simply swarm the player simultaneously, but instead track their surroundings, maintain spacing, and take turns attacking was a huge step up for me. It forced me to think deeply about gameplay balance and user experience.</li>
+                    <li><span class="highlight">Full-Stack Integration:</span> Building the front end game systems alongside this structured website portfolio helped me realize how different engineering platforms connect together in professional workspaces.</li>
+                </ul>
+
+                <h3>Looking Ahead</h3>
+                <p>
+                    This capstone project proved to me that I can take a complicated idea directly from my head, design it entirely from absolute zero, push through the frustration of endless bug-fixing cycles, and deliver a fully functional build. Wrapping up this project has completely solidified my plans to pursue Computer Science at university and build a real career in game engineering and software architecture.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
