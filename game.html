@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=400;600;700;800&display=swap" rel="stylesheet">
 
 <!--  ANIMATION ONLY  -->
 <style>
@@ -15,7 +15,6 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-
     transform: translateY(-10px);
     transition: all 0.5s ease;
 }
@@ -46,6 +45,28 @@
         Click a week to expand and see progress.
     </p>
 </div>
+
+<!-- FULL GAMEPLAY THEATRE SHOWCASE -->
+<div class="journey-container" style="margin-bottom: 40px;">
+    <div class="week-card" style="display: block; padding: 30px; background: rgba(18, 0, 0, 0.85); border: 2px solid #ff3c3c; box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);">
+        <h2 style="color: #ff3c3c; font-size: 28px; text-transform: uppercase; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-align: left;">Full Gameplay Showcase</h2>
+        
+        <!-- WIDESCREEN VIDEO CONTROLLER -->
+        <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0; background: #000; border: 1px solid #ff2a2a; margin-bottom: 20px;">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                <source src="videos/gameplay.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <p style="font-size: 16px; color: #b5b5b5; line-height: 1.7; text-align: left; margin: 0;">
+            <strong style="color: #ff3c3c;">System Features On Display:</strong> This full gameplay capture features our functional client build testing out custom core hitboxes, automated dynamic AI tracing mechanics, sound trigger systems, and structural phase progression variables across continuous enemy rounds.
+        </p>
+    </div>
+</div>
+
+<!-- HORIZONTAL DIVIDER TO SEPARATE THE SHOWCASE FROM WEEKLY LOGS -->
+<hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255, 60, 60, 0.5), transparent); margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto;">
 
 <!-- CONTENT -->
 <div class="journey-container">
@@ -220,6 +241,7 @@ Week 9-12 - Adding Advanced AI
 <p>
 I added Advanced AI that knows it surroundsings, When it see's the player, it will run, moving around the player then attack, if there are multiple enemies in the
 same room or area they will take turns attacking the player so the player doesnt become overwhelmed. The Enemy has health and so does the player.
+</p>
 
 </div>
 
@@ -251,6 +273,37 @@ finished the game UI.
 </details>
 
 </div>
+
+<!-- LIGHTBOX ELEMENT CONTAINERS -->
+<div class="global-lightbox" id="globalLightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Expanded View">
+</div>
+
+<!-- LIGHTBOX LOGIC SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Targets all screenshots or thumbnail images inside your log rows
+        const targets = document.querySelectorAll('.media-row img');
+        
+        targets.forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', function (e) {
+                e.stopPropagation(); 
+                
+                const lightbox = document.getElementById('globalLightbox');
+                const lightboxImg = document.getElementById('lightboxImg');
+                
+                lightboxImg.src = this.src;
+                lightbox.classList.add('active');
+            });
+        });
+    });
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('globalLightbox');
+        lightbox.classList.remove('active');
+    }
+</script>
 
 </body>
 </html>
