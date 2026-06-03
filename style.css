@@ -257,3 +257,43 @@ h1 {
     width: 100%;
     margin-bottom: 10px;
 }
+
+/* ===== GLOBAL LIGHTBOX MECHANIC ===== */
+.global-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999; /* Sits completely on top of everything else */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background focusing on the image */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.global-lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.global-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); /* Matching neon red glow style */
+    border: 2px solid #ff3c3c;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.global-lightbox.active img {
+    transform: scale(1);
+}
+
+/* Make images look clickable across your files */
+.screenshot-wrapper img, .week-content img {
+    cursor: zoom-in;
+}
