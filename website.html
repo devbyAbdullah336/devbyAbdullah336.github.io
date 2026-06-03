@@ -138,5 +138,36 @@ I cleaned up the site and fixed a few spelling errors and bugs
 
 </div>
 
+<!-- LIGHTBOX ELEMENT CONTAINERS -->
+<div class="global-lightbox" id="globalLightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Expanded View">
+</div>
+
+<!-- LIGHTBOX LOGIC SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Targets all images nested inside your media row elements
+        const targets = document.querySelectorAll('.media-row img');
+        
+        targets.forEach(img => {
+            img.addEventListener('click', function (e) {
+                // Prevents closing immediately if clicking directly on the image trigger
+                e.stopPropagation(); 
+                
+                const lightbox = document.getElementById('globalLightbox');
+                const lightboxImg = document.getElementById('lightboxImg');
+                
+                lightboxImg.src = this.src;
+                lightbox.classList.add('active');
+            });
+        });
+    });
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('globalLightbox');
+        lightbox.classList.remove('active');
+    }
+</script>
+
 </body>
 </html>
