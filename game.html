@@ -9,7 +9,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=400;600;700;800&display=swap" rel="stylesheet">
 
-<!--  ANIMATION ONLY  -->
 <style>
 .week-content {
     max-height: 0;
@@ -35,10 +34,8 @@
 
 <body>
 
-<!-- BACK BUTTON -->
 <a href="index.html" class="button back-button">← Back to Home</a>
 
-<!-- HEADER -->
 <div class="title-container">
     <h1>Game Development Journey</h1>
     <p class="p1">
@@ -46,17 +43,12 @@
     </p>
 </div>
 
-<!-- FULL GAMEPLAY THEATRE SHOWCASE -->
 <div class="journey-container" style="margin-bottom: 40px;">
     <div class="week-card" style="display: block; padding: 30px; background: rgba(18, 0, 0, 0.85); border: 2px solid #ff3c3c; box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);">
         <h2 style="color: #ff3c3c; font-size: 28px; text-transform: uppercase; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-align: left;">Full Gameplay Showcase</h2>
         
-        <!-- WIDESCREEN VIDEO CONTROLLER -->
         <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0; background: #000; border: 1px solid #ff2a2a; margin-bottom: 20px;">
-            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                <source src="videos/gameplay.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe src="https://www.youtube.com/embed/y_xbvklsYDw?si=UQbG8J9XNBLhsK_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
         </div>
 
         <p style="font-size: 16px; color: #b5b5b5; line-height: 1.7; text-align: left; margin: 0;">
@@ -65,13 +57,10 @@
     </div>
 </div>
 
-<!-- HORIZONTAL DIVIDER TO SEPARATE THE SHOWCASE FROM WEEKLY LOGS -->
 <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255, 60, 60, 0.5), transparent); margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto;">
 
-<!-- CONTENT -->
 <div class="journey-container">
 
-<!-- WEEK 1 -->
 <details class="week-card">
 <summary class="week-title">
 Week 1 - Player Movement
@@ -98,7 +87,6 @@ I also made the the script for the Enemy AI but it doesnt do anything yet.
 </div>
 </details>
 
-<!-- WEEK 2 -->
 <details class="week-card">
 <summary class="week-title">
 Week 2 - Free-Flow Combat System start
@@ -125,7 +113,6 @@ i got the character to move between enemies based on the direction you are facin
 </div>
 </details>
 
-<!-- WEEK 3/4 -->
 <details class="week-card">
 <summary class="week-title">
 Week 3/4 - Adding Dynamic Camera and Attack Animations
@@ -150,7 +137,6 @@ and vice versa for all directions.
 </div>
 </details>
 
-<!-- WEEK 5/6 -->
 <details class="week-card">
 <summary class="week-title">
 Week 5/6 - Attacking Enemies and adding motion warping
@@ -175,7 +161,6 @@ if the positioning isn’t perfect.
 </div>
 </details>
 
-<!-- WEEK 7 -->
 <details class="week-card">
 <summary class="week-title">
 Week 7 - Adding More Animations and Bug fixing
@@ -200,7 +185,6 @@ I fixed the bug after about 30 minutes of debugging.
 </div>
 </details>
 
-<!-- WEEK 8 -->
 <details class="week-card">
 <summary class="week-title">
 Week 8 - Adding Basic AI in the Game
@@ -224,7 +208,6 @@ the player.
 </div>
 </details>
 
-<!-- WEEK 9-12 -->
 <details class="week-card">
 <summary class="week-title">
 Week 9-12 - Adding Advanced AI 
@@ -248,7 +231,6 @@ same room or area they will take turns attacking the player so the player doesnt
 </div>
 </details>
 
-<!-- WEEK 13 -->
 <details class="week-card">
 <summary class="week-title">
 Week 13 - Final Week - Making World environment and Player UI/Player Model and more
@@ -274,12 +256,10 @@ finished the game UI.
 
 </div>
 
-<!-- LIGHTBOX ELEMENT CONTAINERS -->
 <div class="global-lightbox" id="globalLightbox" onclick="closeLightbox()">
     <img id="lightboxImg" src="" alt="Expanded View">
 </div>
 
-<!-- LIGHTBOX LOGIC SCRIPT -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Targets all screenshots or thumbnail images inside your log rows
