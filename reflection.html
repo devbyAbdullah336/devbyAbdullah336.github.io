@@ -94,10 +94,17 @@
             top: 2px;
             color: #ff3c3c;
         }
+
+        /* --- New CSS to prevent text selection --- */
+        .no-copy {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
     </style>
 </head>
 
-<body>
+<body class="no-copy" oncopy="return false" oncut="return false" onpaste="return false" oncontextmenu="return false">
 
     <a href="index.html" class="button back-button">◀ Back to Arena</a>
 
